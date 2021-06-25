@@ -8,6 +8,10 @@ const cardSchema = new mongoose.Schema({
         type:mongoose.ObjectId,
         ref:'Columns',
         required:true
+    },
+    userID:{
+        type:mongoose.ObjectId,
+        ref:'User'
     }
 },{
     timestamps:true
