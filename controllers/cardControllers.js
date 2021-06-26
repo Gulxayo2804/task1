@@ -52,8 +52,7 @@ exports.deleteCard = async(req,res,next)=>{
 // method -  GET
 // cardni search qilish:
 exports.getSearch = async(req,res,next)=>{
-    let d=req.query.title
-    await Card.find({description:/^Each/}, (err,data)=>{
+    await Card.find( { description: { $regex: req.query.description } }, (err,data)=>{
         res.send(data)
     } )
 }
